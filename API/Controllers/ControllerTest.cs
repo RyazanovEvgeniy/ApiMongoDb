@@ -9,7 +9,7 @@ namespace API.Controllers;
 [ApiController]
 public class ControllerTest : ControllerBase
 {
-    private IServiceTest _serviceTest;
+    private readonly IServiceTest _serviceTest;
 
     public ControllerTest(IServiceTest serviceTest)
     {
