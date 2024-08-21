@@ -2,7 +2,6 @@ using DAL.Entities;
 
 namespace DAL.Repository.Interfaces;
 
-public interface IRepositoryTest
+public interface IOrderRepository
 {
-    List<Test> GetAll();
 }

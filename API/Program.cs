@@ -1,12 +1,16 @@
 using BLL.Services.Interfaces;
 using BLL.Services;
+using DAL.Data;
+using DAL.Data.Interfaces;
 using DAL.Repository.Interfaces;
 using DAL.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IServiceTest, ServiceTest>();
-builder.Services.AddScoped<IRepositoryTest, RepositoryTest>();
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDbSettings"));
+builder.Services.AddScoped<IMongoDbContext, MongoDbContext>();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
 
 builder.Services.AddControllers();
 
