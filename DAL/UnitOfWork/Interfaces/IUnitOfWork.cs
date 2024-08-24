@@ -4,6 +4,5 @@ namespace DAL.UnitOfWork.Interfaces;
 
 public interface IUnitOfWork
 {
-    // ICustomerRepository Customers { get; }
-    // IOrderRepository Orders { get; }
+    IUserRepository Users { get; }
 }
